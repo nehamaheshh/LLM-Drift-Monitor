@@ -84,27 +84,31 @@ llm-drift-monitor/
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
+```
 ### 2️⃣ Install dependencies
-
+```
 pip install -r requirements.txt
+```
 ### 3️⃣ Start Ollama & pull models
-
+```
 ollama list
 ollama pull llama3:8b
 ollama pull qwen2.5:7b
+```
 ### 4️⃣ Log LLM interactions
 This logs prompts, responses, embeddings, latency, length, and refusal flags.
-
-
-python -m scripts.run_prompt
-### 5️⃣ Run CLI drift monitor
-
-python -m scripts.run_daily_monitor
-### 6️⃣ Launch Streamlit dashboard
-
-streamlit run dashboard/app.py
-
 ```
+python -m scripts.run_prompt
+```
+### 5️⃣ Run CLI drift monitor
+```
+python -m scripts.run_daily_monitor
+```
+### 6️⃣ Launch Streamlit dashboard
+```
+streamlit run dashboard/app.py
+```
+
 🧪 Controlled Model Switch Experiment (Equal Samples)
 This performs a clean A/B test:
 
@@ -183,4 +187,5 @@ Switching from LLaMA-3-8B to Qwen-2.5-7B caused major verbosity and refusal-rate
 -data/llm_logs.db is intentionally not committed
 -Use EXPERIMENT_ID to keep experiments isolated and reproducible
 -Cost estimates are approximate (token ≈ 1.33 × words)
+
 
